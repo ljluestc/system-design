@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>YouTube Prototype - Home</title>
+</head>
+<body>
+    <h1>Videos</h1>
+    <ul>
+        {{range .}}
+        <li><a href="/video/{{.ID}}">{{.Title}}</a> - {{.Description}}</li>
+        {{end}}
+    </ul>
+    <a href="/upload">Upload a Video</a>
+</body>
+</html>

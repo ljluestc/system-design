@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{.Video.Title}}</title>
+</head>
+<body>
+    <h1>{{.Video.Title}}</h1>
+    <p>{{.Video.Description}}</p>
+    <video controls>
+        <source src="/videos/{{.Video.ID}}.mp4" type="video/mp4">
+    </video>
+    <p>Views: {{.Video.Views}}</p>
+    <p>Likes: {{.Likes}} | Dislikes: {{.Dislikes}}</p>
+    <form action="/like" method="post">
+        <input type="hidden" name="video_id" value="{{.Video.ID}}">
+        <input type="hidden" name="user" value="user1">
+        <button name="like_type" value="like">Like</button>
+        <button name="like_type" value="dislike">Dislike</button>
+    </form>
+    <h2>Comments</h2>
+    <ul>
+        {{range .Comments}}
+        <li>{{.user}}: {{.comment}} ({{.timestamp}})</li>
+        {{end}}
+    </ul>
+    <form action="/comment" method="post">
+        <input type="hidden" name="video_id" value="{{.Video.ID}}">
+        <input type="text" name="user" placeholder="Your name">
+        <textarea name="comment" placeholder="Add a comment"></textarea>
+        <input type="submit" value="Comment">
+    </form>
+</body>
+</html>

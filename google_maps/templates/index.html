@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Clone</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #map { height: 500px; width: 100%; margin-top: 20px; }
+        #route-info { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Google Maps Clone</h1>
+    <input type="text" id="start" placeholder="Start Location">
+    <input type="text" id="end" placeholder="End Location">
+    <button onclick="getRoute()">Get Route</button>
+    <div id="route-info"></div>
+    <div id="map"></div>
+    <script>
+        function getRoute() {
+            const start = $('#start').val();
+            const end = $('#end').val();
+            $.get('/route', {start: start, end: end}, function(data) {
+                if (data.error) {
+                    $('#route-info').html(data.error);
+                } else {
+                    $('#route-info').html(`Path: ${data.path.join(' -> ')}, Distance: ${data.distance.toFixed(2)} km, Time: ${data.time.toFixed(2)} min`);
+                    $.get('/map', {start: start, end: end}, function(mapHtml) {
+                        $('#map').html(mapHtml);
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

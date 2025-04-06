@@ -1,0 +1,30 @@
+version: '3'
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "3001:3001"
+  post-service:
+    build: ./post-service
+    ports:
+      - "3002:3002"
+  newsfeed-service:
+    build: ./newsfeed-service
+    ports:
+      - "3003:3003"
+  search-service:
+    build: ./search-service
+    ports:
+      - "3004:3004"
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "3005:3005"
+  media-service:
+    build: ./media-service
+    ports:
+      - "3006:3006"
+  ranking-service:
+    build: ./ranking-service
+    ports:
+      - "3007:3007"

@@ -1,0 +1,32 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .chat-window {
+    width: 80%;
+    height: 80%;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .messages {
+    height: 90%;
+    overflow-y: scroll;
+  }
+  
+  .message {
+    margin: 5px 0;
+  }
+  
+  .user {
+    text-align: right;
+    color: blue;
+  }
+  
+  .bot {
+    text-align: left;
+    color: green;
+  }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A scalable typeahead suggestion system">
+  <meta name="keywords" content="typeahead, autocomplete, suggestions">
+  <meta name="author" content="Your Name">
+  <title>Typeahead Suggestion System</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    /* Base styling for the page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Container for the React app */
+    #root {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    /* Heading style */
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    /* Responsive design */
+    @media (max-width: 600px) {
+      #root {
+        max-width: 90%;
+        padding: 10px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="/bundle.js"></script>
+  <script>
+    // Initial console log for debugging
+    console.log("Typeahead Suggestion System loaded");
+    // Fallback for older browsers
+    if (!window.fetch) {
+      console.error("Fetch API not supported");
+    }
+  </script>
+</body>
+</html>
